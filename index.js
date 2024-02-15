@@ -4,6 +4,7 @@
   get(key)
   has(key)
   remove(key)
+  all()
 */
 
 const fs = require('fs')
@@ -47,6 +48,9 @@ class DB {
     let data = getFile(this.file);
     delete data[key];
     setFile(this.file, data);
+  }
+  all() {
+    return getFile(this.file)
   }
 }
 
