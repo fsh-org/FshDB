@@ -1,12 +1,3 @@
-/*
-  Functions:
-  set(key, value)
-  get(key)
-  has(key)
-  remove(key)
-  all()
-*/
-
 const fs = require('fs')
 const write = require('write')
 
@@ -51,6 +42,42 @@ class DB {
   }
   all() {
     return getFile(this.file)
+  }
+  add(key, number) {
+    let data = getFile(this.file);
+    data[key] = (Number(data[key]) || 0) + number;
+    setFile(this.file, data);
+  }
+  sub(key, number) {
+    let data = getFile(this.file);
+    data[key] = (Number(data[key]) || 0) - number;
+    setFile(this.file, data);
+  }
+  push(key, value) {
+    let data = getFile(this.file);
+    data[key].push(value)
+    setFile(this.file, data);
+  }
+  pull(key, index) {
+    let data = getFile(this.file);
+    data[key] = data[key].slice(0,index).concat(data[key].slice(index+1,data[key].length))
+    setFile(this.file, data);
+  }
+  pop(key) {
+    let data = getFile(this.file);
+    let value = data[key].pop()
+    setFile(this.file, data);
+    return value;
+  }
+  flat(key) {
+    let data = getFile(this.file);
+    data[key] = data[key].flat()
+    setFile(this.file, data);
+  }
+  concat(key, value) {
+    let data = getFile(this.file);
+    data[key] = data[key].concat(value)
+    setFile(this.file, data);
   }
 }
 
