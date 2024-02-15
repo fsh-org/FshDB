@@ -1,0 +1,23 @@
+{
+  "name": "fshdb",
+  "version": "0.1.0",
+  "description": "A lightweight & fast json database with the esentials",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fsh-org/FshDB.git"
+  },
+  "keywords": [
+    "Fsh",
+    "db"
+  ],
+  "author": "Inventionpro & Frostzzone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fsh-org/FshDB/issues"
+  },
+  "homepage": "https://github.com/Fsh-org/FshDB#readme"
+}
