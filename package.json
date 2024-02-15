@@ -1,7 +1,7 @@
 {
   "name": "fshdb",
   "version": "0.1.0",
-  "description": "A lightweight & fast json database with the esentials",
+  "description": "A lightweight & fast json database with the essentials",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
