@@ -27,7 +27,7 @@ class DB {
   constructor(file) {
     this.file = file;
     if (!fs.existsSync(file)) {
-      setFile(file, '{}');
+      setFile(file, {});
     }
   }
   set(key, value) {
