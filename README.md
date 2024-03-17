@@ -16,6 +16,7 @@ DB.set('key', 'value')
 - `get(key)` - Gets the value of a key
 - `has(key)` - Is there a key in the db
 - `remove(key)` - Removes a key from the db
+- `find(function)` - Returns a list of keys which values follow the function
 - `all()` - Gets the whole databse as object
 
 ### Number values
