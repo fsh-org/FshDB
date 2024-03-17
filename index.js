@@ -40,6 +40,16 @@ class DB {
     delete data[key];
     setFile(this.file, data);
   }
+  find(func) {
+    let data = getFile(this.file);
+    let match = [];
+    Object.keys(data).forEach(key => {
+      if (func(data[key])) {
+        match.push(key)
+      }
+    })
+    return match;
+  }
   all() {
     return getFile(this.file)
   }
