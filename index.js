@@ -50,6 +50,9 @@ class DB {
     })
     return match;
   }
+  keys() {
+    return Object.keys(getFile(this.file))
+  }
   all() {
     return getFile(this.file)
   }
@@ -91,6 +94,29 @@ class DB {
     let data = getFile(this.file);
     data[key] = data[key].concat(value)
     setFile(this.file, data);
+  }
+  oset(key, value) {
+    // not secure, not recomended for getting stuff via user input :p
+    let data = getFile(this.file);
+    let ke = 'data["'+key.replaceAll(/[\\\/"]/g, function(match){return '\\'+match}).split('.').join('"]["')+'"] = value;';
+    eval(ke)
+    setFile(this.file, data);
+  }
+  oget(key) {
+    let data = getFile(this.file);
+    let ke = data;
+    key.split('.').forEach(ey => {
+      ke = ke[ey]
+    })
+    return ke;
+  }
+  okey(key) {
+    let data = getFile(this.file);
+    let ke = data;
+    key.split('.').forEach(ey => {
+      ke = ke[ey]
+    })
+    return Object.keys(ke);
   }
 }
 
