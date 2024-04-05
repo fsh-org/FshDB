@@ -53,6 +53,9 @@ class DB {
   all() {
     return getFile(this.file)
   }
+  backup(file) {
+    setFile(file, getFile(this.file));
+  }
   add(key, number) {
     let data = getFile(this.file);
     data[key] = (Number(data[key]) || 0) + number;
