@@ -1,6 +1,6 @@
 {
   "name": "fshdb",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "A lightweight & fast json database with the essentials",
   "main": "index.js",
   "scripts": {
