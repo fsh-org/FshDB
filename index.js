@@ -1,5 +1,4 @@
 const fs = require('fs')
-const write = require('write')
 
 function getFile(file) {
   let contents = fs.readFileSync(file, 'utf8');
@@ -12,7 +11,7 @@ function getFile(file) {
   return contents;
 }
 function setFile(file, contents) {
-  write.sync(file, JSON.stringify(contents, null, 2), { overwrite: true });
+  fs.writeFileSync(file, JSON.stringify(contents, null, 2), { overwrite: true });
 }
 
 class DB {
