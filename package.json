@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/Fsh-org/FshDB/issues"
   },
-  "homepage": "https://github.com/Fsh-org/FshDB#readme",
-  "dependencies": {
-    "fs": "^0.0.1-security"
-  }
+  "homepage": "https://github.com/Fsh-org/FshDB#readme"
 }
