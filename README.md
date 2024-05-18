@@ -1,17 +1,24 @@
 # FshDB
-A lightweight & fast json database with the essentials
+A lightweight & fast json database with the essentials and more
 
 ```js
-const FshDB = require('fshdb')
+// Require the base db
+const { DB } = require('fshdb')
 
 // Creating the db
-let DB = new FshDB('./path.json')
+let fsh = new DB()
 
 // Setting data
-DB.set('key', 'value')
+fsh.set('key', 'value')
 ```
 
-## Functions
+## Constructor
+Types of dbs
+- DB - Base databse
+- mini - Less instructions (faster)
+- fast - The fastest with all instructions (non stable)
+
+## Base Functions
 - `set(key, value)` - Sets a value to a key (can be any standard type)
 - `get(key)` - Gets the value of a key
 - `has(key)` - Checks for a key in the db return true or false
@@ -38,6 +45,5 @@ Functions for values that are of type array
 Functions for values that are of type object/json
 You can add `.` inside the keys to denote access of a further object
 Example of `.`: `key.key2` for { key: { key2: 'Hello', key1: 'Bye' } } is 'Hello'
-- `oset(key, value)` - Set a value inside a object
-- `oget(key)` - Get a value inside a object in a key
+this can be use also in get and set
 - `okey(key)` - The keys of a object on a key
