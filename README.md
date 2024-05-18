@@ -15,8 +15,8 @@ fsh.set('key', 'value')
 ## Constructor
 Types of dbs
 - DB - Base databse
-- mini - Less instructions (faster)
-- fast - The fastest with all instructions (non stable)
+- miniDB - Less instructions (faster)
+- fastDB - The fastest with all instructions (non stable)
 
 ## Base Functions
 - `set(key, value)` - Sets a value to a key (can be any standard type)
