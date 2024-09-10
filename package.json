@@ -11,10 +11,12 @@
     "url": "git+https://github.com/Fsh-org/FshDB.git"
   },
   "keywords": [
+    "databases",
+    "db",
     "fsh",
     "json",
-    "db",
-    "databases"
+    "npm",
+    "package"
   ],
   "author": "Inventionpro & Frostzzone",
   "license": "Open Fsh",
