@@ -1,6 +1,6 @@
 {
   "name": "fshdb",
-  "version": "1.0.0-beta",
+  "version": "1.0.1-beta",
   "description": "A lightweight & fast json database with the essentials and more",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,10 @@
     "url": "git+https://github.com/Fsh-org/FshDB.git"
   },
   "keywords": [
-    "Fsh",
-    "db"
+    "fsh",
+    "json",
+    "db",
+    "databases"
   ],
   "author": "Inventionpro & Frostzzone",
   "license": "Open Fsh",
