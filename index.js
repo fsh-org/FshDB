@@ -6,7 +6,6 @@ function getFile(file) {
     contents = JSON.parse(contents);
   } catch (err) {
     throw new Error(file + ' is corrupted');
-    return;
   }
   return contents;
 }
@@ -72,6 +71,9 @@ class DB {
   }
   keys() {
     return Object.keys(getFile(this.file))
+  }
+  values() {
+    return Object.values(getFile(this.file))
   }
   all() {
     return getFile(this.file)
@@ -199,6 +201,9 @@ class fastDB {
   }
   keys() {
     return Object.keys(this.cont)
+  }
+  values() {
+    return Object.values(this.cont)
   }
   all() {
     return this.cont
