@@ -25,6 +25,7 @@ Types of dbs
 - `remove(key)` - Removes a key from the db
 - `find(function)` - Returns a list of keys which values follow the function
 - `keys()` - List of all the keys on the db
+- `values()` - List of all the values on the db
 - `all()` - Gets the whole database as object
 - `backup(file)` - Backups the db file to another file (big dbs will take some time)
 
