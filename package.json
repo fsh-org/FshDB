@@ -1,11 +1,12 @@
 {
   "name": "fshdb",
+  "author": "Inventionpro & Frostzzone",
   "version": "1.0.1-beta",
   "description": "A lightweight & fast json database with the essentials and more",
+  "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "types": "index.d.ts",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fsh-org/FshDB.git"
@@ -18,7 +19,6 @@
     "npm",
     "package"
   ],
-  "author": "Inventionpro & Frostzzone",
   "license": "Open Fsh",
   "bugs": {
     "url": "https://github.com/Fsh-org/FshDB/issues"
