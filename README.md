@@ -16,7 +16,7 @@ fsh.set('key', 'value')
 DB(file, options)
 - `file` - Optional, File where the db will be, relative, Default: `DB.json`
 - `options` - Optional
-  - ``
+  - `compact` - Compact db files
 
 ## Base Functions
 - `set(key, value)` - Sets a value to a key (can be any standard type)
