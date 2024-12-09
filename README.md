@@ -3,7 +3,7 @@ A lightweight & fast json database with the essentials and more
 
 ```js
 // Require the base db
-const { DB } = require('fshdb')
+const DB = require('fshdb')
 
 // Creating the db
 let fsh = new DB()
@@ -13,10 +13,10 @@ fsh.set('key', 'value')
 ```
 
 ## Constructor
-Types of dbs
-- DB - Base databse
-- miniDB - Less instructions (faster)
-- fastDB - The fastest with all instructions (non stable)
+DB(file, options)
+- `file` - Optional, File where the db will be, relative, Default: `DB.json`
+- `options` - Optional
+  - ``
 
 ## Base Functions
 - `set(key, value)` - Sets a value to a key (can be any standard type)
@@ -46,5 +46,4 @@ Functions for values that are of type array
 Functions for values that are of type object/json
 You can add `.` inside the keys to denote access of a further object
 Example of `.`: `key.key2` for { key: { key2: 'Hello', key1: 'Bye' } } is 'Hello'
-this can be use also in get and set
-- `okey(key)` - The keys of a object on a key
+So far this can be used for get and set
