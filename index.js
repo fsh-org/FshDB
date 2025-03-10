@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 
 class DB {
   constructor(file='DB.json', options={}) {
@@ -7,8 +7,11 @@ class DB {
       this._setFile({});
     }
     this.compact = Boolean(options?.compact);
+    this.warm = Boolean(options?.warm);
+    if (this.warm) this.contents = {};
   }
   _getFile() {
+    if (this.warm) return this.contents;
     let contents = fs.readFileSync(this.file, 'utf8');
     try {
       contents = JSON.parse(contents);
@@ -18,6 +21,10 @@ class DB {
     return contents;
   }
   _setFile(contents, file=this.file) {
+    if (this.warm && file!==this.file) {
+      this.contents = contents;
+      return;
+    }
     fs.writeFileSync(file,
       (this.compact ?
       JSON.stringify(contents) :
@@ -63,19 +70,19 @@ class DB {
     let match = [];
     Object.keys(data).forEach(key => {
       if (func(data[key], key)) {
-        match.push(key)
+        match.push(key);
       }
     })
     return match;
   }
   keys() {
-    return Object.keys(this._getFile())
+    return Object.keys(this._getFile());
   }
   values() {
-    return Object.values(this._getFile())
+    return Object.values(this._getFile());
   }
   all() {
-    return this._getFile()
+    return this._getFile();
   }
   backup(file) {
     this._setFile(this._getFile(), file);
@@ -92,28 +99,28 @@ class DB {
   }
   push(key, value) {
     let data = this._getFile();
-    data[key].push(value)
+    data[key].push(value);
     this._setFile(data);
   }
   pull(key, index) {
     let data = this._getFile();
-    data[key] = data[key].slice(0,index).concat(data[key].slice(index+1,data[key].length))
+    data[key] = data[key].slice(0,index).concat(data[key].slice(index+1,data[key].length));
     this._setFile(data);
   }
   pop(key) {
     let data = this._getFile();
-    let value = data[key].pop()
+    let value = data[key].pop();
     this._setFile(data);
     return value;
   }
   flat(key) {
     let data = this._getFile();
-    data[key] = data[key].flat()
+    data[key] = data[key].flat();
     this._setFile(data);
   }
   concat(key, value) {
     let data = this._getFile();
-    data[key] = data[key].concat(value)
+    data[key] = data[key].concat(value);
     this._setFile(data);
   }
 }
