@@ -2,6 +2,8 @@ declare const fs: any;
 declare class DB {
     file: string;
     compact: boolean;
+    warm: boolean;
+    contents?: object;
     constructor(file?: string, options?: {});
     _getFile(): any;
     _setFile(contents: any, file?: string): void;
