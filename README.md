@@ -3,13 +3,13 @@ A lightweight & fast json database with the essentials and more
 
 ```js
 // Require the base db
-const DB = require('fshdb')
+const DB = require('fshdb');
 
 // Creating the db
-let fsh = new DB()
+let fsh = new DB();
 
 // Setting data
-fsh.set('key', 'value')
+fsh.set('key', 'value');
 ```
 
 ## Constructor
@@ -17,6 +17,7 @@ DB(file, options)
 - `file` - Optional, File where the db will be, relative, Default: `DB.json`
 - `options` - Optional
   - `compact` - Compact db files
+  - `warm` - Does not store to file, good for cache
 
 ## Base Functions
 - `set(key, value)` - Sets a value to a key (can be any standard type)
