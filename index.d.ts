@@ -5,23 +5,18 @@ declare class DB {
     warm: boolean;
     contents?: object;
     constructor(file?: string, options?: {});
-    _getFile(): any;
-    _setFile(contents: any, file?: string): void;
-    _setnest(data: any, key: string, value: any): any;
     set(key: string, value: any): void;
     get(key: string): any;
     has(key: string): boolean;
     remove(key: string): void;
-    find(func: (arg0: any, arg1: string) => any): string[];
-    keys(): string[];
-    values(): unknown[];
-    all(): any;
+    find(func: (arg0: any, arg1: string) => boolean): string[];
+    all(): object;
     backup(file: string): void;
     add(key: string, number: number): void;
     sub(key: string, number: number): void;
     push(key: string, value: any): void;
     pull(key: string, index: number): void;
     pop(key: string): any;
-    flat(key: string): void;
+    flat(key: string, number?: number): void;
     concat(key: string, value: any): void;
 }
