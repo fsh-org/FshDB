@@ -9,7 +9,7 @@ class DB {
     if (this.warm) this.contents = {};
   }
   _getFile() {
-    if (this.warm) return this.contents;
+    if (this.warm) return structuredClone(this.contents);
     let contents = fs.readFileSync(this.file, 'utf8');
     try {
       contents = JSON.parse(contents);
@@ -33,7 +33,8 @@ class DB {
     let p = key.split('.');
     let target = data;
     for (let i = 0; i < p.length - 1; i++) {
-      if (target[p[i]] === undefined) target[p[i]] = {};
+      if (['__proto__','constructor','prototype'].includes(p[i])) throw new Error('Cannot set __proto__/constructor/prototype keys');
+      if (target[p[i]] === undefined) target[p[i]] = Object.create(null);
       target = target[p[i]];
     }
     target[p[p.length - 1]] = value;
